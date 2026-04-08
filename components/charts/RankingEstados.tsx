@@ -17,6 +17,44 @@ function choroColor(pct: number): string {
   return "#10b981";
 }
 
+function faixaLabel(pct: number): string {
+  if (pct < 35) return "Muito baixa";
+  if (pct < 42) return "Baixa";
+  if (pct < 49) return "Média";
+  if (pct < 57) return "Alta";
+  return "Muito alta";
+}
+
+function exportarCSV(
+  rows: { sigla: string; nome: string; taxa: number | null; total: number | null; diff: number | null }[],
+  taxaNacional: number
+) {
+  const header = ["Rank", "Sigla", "Estado", "Taxa de Soltura (%)", "Total Audiências", `vs Nacional (${taxaNacional}%) em p.p.`, "Faixa"];
+  const linhas = rows.map((r, i) => [
+    i + 1,
+    r.sigla,
+    r.nome,
+    r.taxa ?? "",
+    r.total ?? "",
+    r.diff !== null ? (r.diff >= 0 ? `+${r.diff}` : r.diff) : "",
+    r.taxa !== null ? faixaLabel(r.taxa) : "",
+  ]);
+
+  const csv =
+    "\uFEFF" + // BOM para Excel reconhecer UTF-8
+    [header, ...linhas]
+      .map((cols) => cols.map((c) => `"${c}"`).join(","))
+      .join("\n");
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "flagrante-site-ranking-estados.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 interface RankingEstadosProps {
   porUF: PorUFData;
   taxaNacional: number;
@@ -84,7 +122,7 @@ export function RankingEstados({ porUF, taxaNacional }: RankingEstadosProps) {
 
   return (
     <div className="flex flex-col gap-3">
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 flex-wrap">
       <input
         type="search"
         placeholder="Buscar estado…"
@@ -97,6 +135,13 @@ export function RankingEstados({ porUF, taxaNacional }: RankingEstadosProps) {
           {rows.length} estado{rows.length !== 1 ? "s" : ""} encontrado{rows.length !== 1 ? "s" : ""}
         </span>
       )}
+      <button
+        onClick={() => exportarCSV(rows, taxaNacional)}
+        className="ml-auto inline-flex items-center gap-1.5 rounded-lg border border-slate-600 bg-slate-800 px-3 py-1.5 text-xs text-slate-400 hover:border-indigo-600 hover:text-indigo-400 transition-colors"
+        title="Baixar tabela como CSV"
+      >
+        ↓ Baixar CSV
+      </button>
     </div>
     <div className="overflow-x-auto rounded-lg border border-slate-700">
       <table className="w-full text-sm">
@@ -179,15 +224,7 @@ export function RankingEstados({ porUF, taxaNacional }: RankingEstadosProps) {
                         border: `1px solid ${cor}55`,
                       }}
                     >
-                      {row.taxa < 35
-                        ? "Muito baixa"
-                        : row.taxa < 42
-                        ? "Baixa"
-                        : row.taxa < 49
-                        ? "Média"
-                        : row.taxa < 57
-                        ? "Alta"
-                        : "Muito alta"}
+                      {faixaLabel(row.taxa)}
                     </span>
                   )}
                 </td>

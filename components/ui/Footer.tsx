@@ -33,7 +33,7 @@ export function Footer() {
             <ul className="space-y-1 text-xs">
               <li>Série histórica com quebra em ago/2024</li>
               <li>Raça/escolaridade: &gt;50% sem preenchimento</li>
-              <li>Dados por UF disponíveis no Sprint 2</li>
+              <li>Raça/escolaridade: campo preenchido em ~45–48%</li>
             </ul>
           </div>
           <div>
@@ -42,6 +42,11 @@ export function Footer() {
               <li>
                 <a href="/sobre" className="hover:text-slate-200 underline">
                   Metodologia completa
+                </a>
+              </li>
+              <li>
+                <a href="/dados" className="hover:text-slate-200 underline">
+                  Dados abertos (JSON)
                 </a>
               </li>
               <li>

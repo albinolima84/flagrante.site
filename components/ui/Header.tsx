@@ -19,6 +19,9 @@ export function Header() {
           <Link href="/comparar" className="hover:text-white transition-colors">
             Comparar
           </Link>
+          <Link href="/dados" className="hover:text-white transition-colors">
+            Dados
+          </Link>
           <Link href="/sobre" className="hover:text-white transition-colors">
             Metodologia
           </Link>
