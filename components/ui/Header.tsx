@@ -16,6 +16,9 @@ export function Header() {
           <Link href="/" className="hover:text-white transition-colors">
             Painel
           </Link>
+          <Link href="/comparar" className="hover:text-white transition-colors">
+            Comparar
+          </Link>
           <Link href="/sobre" className="hover:text-white transition-colors">
             Metodologia
           </Link>

@@ -14,6 +14,7 @@ import { useFilterStore } from "@/lib/store";
 
 interface DecisaoDonutProps {
   dados: DecisaoItem[];
+  label?: string; // overrides the center text (used in the comparador)
 }
 
 const RADIAN = Math.PI / 180;
@@ -52,8 +53,9 @@ function renderCustomLabel(props: PieLabelRenderProps) {
   );
 }
 
-export function DecisaoDonut({ dados }: DecisaoDonutProps) {
+export function DecisaoDonut({ dados, label }: DecisaoDonutProps) {
   const uf = useFilterStore((s) => s.uf);
+  const centerLabel = label ?? (uf === "BR" ? "Nacional" : uf);
 
   const total = dados.reduce((acc, d) => acc + d.pct, 0);
 
@@ -104,7 +106,7 @@ export function DecisaoDonut({ dados }: DecisaoDonutProps) {
             fill="#94a3b8"
             fontSize={12}
           >
-            {uf === "BR" ? "Nacional" : uf}
+            {centerLabel}
           </text>
         </PieChart>
       </ResponsiveContainer>

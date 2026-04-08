@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { UF_LIST } from "@/lib/constants";
 import porUFData from "@/data/static/por-uf.json";
 import nacionalData from "@/data/static/nacional.json";
@@ -63,6 +64,12 @@ export default async function EstadoPage({ params }: PageProps) {
           Dados consolidados do CNJ para o estado de {estado?.nome ?? sigla}.
           Fonte principal: BNMP 3.0 (ago/2024–jan/2026).
         </p>
+        <Link
+          href={`/comparar?a=${sigla}`}
+          className="mt-2 self-start inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 text-xs text-slate-400 hover:border-indigo-600 hover:text-indigo-400 transition-colors"
+        >
+          ⇄ Comparar com outro estado
+        </Link>
       </div>
 
       {/* Headline metrics */}
