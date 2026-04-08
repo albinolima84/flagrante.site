@@ -1,0 +1,24 @@
+{
+  "fonte": "CNJ / Boletins SISTAC (2015–2024) + BNMP 3.0 (ago/2024–presente)",
+  "ultima_atualizacao": "2026-01",
+  "nota_quebra_serie": "Em agosto de 2024, o CNJ migrou do SISTAC para o BNMP 3.0. Os dados pré e pós não são diretamente comparáveis em todos os campos.",
+  "ano_quebra": 2024,
+  "serie": [
+    { "ano": 2015, "total_audiencias": 45000, "pct_solto": 38, "pct_preso": 62, "fonte": "sistac" },
+    { "ano": 2016, "total_audiencias": 180000, "pct_solto": 39, "pct_preso": 61, "fonte": "sistac" },
+    { "ano": 2017, "total_audiencias": 280000, "pct_solto": 40, "pct_preso": 60, "fonte": "sistac" },
+    { "ano": 2018, "total_audiencias": 310000, "pct_solto": 40, "pct_preso": 60, "fonte": "sistac" },
+    { "ano": 2019, "total_audiencias": 340000, "pct_solto": 41, "pct_preso": 59, "fonte": "sistac" },
+    { "ano": 2020, "total_audiencias": 180000, "pct_solto": 45, "pct_preso": 55, "fonte": "sistac", "nota": "Pandemia COVID-19 — suspensão parcial" },
+    { "ano": 2021, "total_audiencias": 260000, "pct_solto": 43, "pct_preso": 57, "fonte": "sistac" },
+    { "ano": 2022, "total_audiencias": 310000, "pct_solto": 42, "pct_preso": 58, "fonte": "sistac" },
+    { "ano": 2023, "total_audiencias": 340000, "pct_solto": 41, "pct_preso": 59, "fonte": "sistac" },
+    { "ano": 2024, "total_audiencias": 320000, "pct_solto": 41, "pct_preso": 59, "fonte": "misto", "nota": "Migração SISTAC → BNMP 3.0 em ago/2024" },
+    { "ano": 2025, "total_audiencias": 350000, "pct_solto": 41, "pct_preso": 59, "fonte": "bnmp" }
+  ],
+  "anotacoes": [
+    { "ano": 2020, "label": "Pandemia COVID-19", "descricao": "Suspensão de audiências presenciais — mar/2020" },
+    { "ano": 2019, "label": "CPP atualizado", "descricao": "Lei 13.964/2019 (Pacote Anticrime)" },
+    { "ano": 2024, "label": "Quebra de série", "descricao": "Migração SISTAC → BNMP 3.0 em agosto/2024" }
+  ]
+}

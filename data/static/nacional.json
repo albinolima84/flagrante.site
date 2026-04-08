@@ -1,0 +1,26 @@
+{
+  "fonte": "CNJ / Boletins SISTAC + BNMP 3.0",
+  "ultima_atualizacao": "2026-01",
+  "headlines": {
+    "total_audiencias": 2000000,
+    "total_audiencias_label": "> 2 milhões",
+    "taxa_soltura_pct": 41,
+    "relatos_tortura_pct": 7,
+    "relatos_tortura_abs": 153000,
+    "audiencias_presenciais_pct": 46,
+    "nota_presenciais": "Apenas pós ago/2024 (BNMP 3.0)"
+  },
+  "decisoes": [
+    { "tipo": "Liberdade concedida", "pct": 41, "cor": "#10b981" },
+    { "tipo": "Prisão preventiva mantida", "pct": 58.7, "cor": "#ef4444" },
+    { "tipo": "Prisão domiciliar", "pct": 0.3, "cor": "#f59e0b" }
+  ],
+  "tipos_penais": [
+    { "tipo": "Tráfico de drogas", "pct": 24, "cor": "#6366f1" },
+    { "tipo": "Furto", "pct": 13, "cor": "#8b5cf6" },
+    { "tipo": "Violência doméstica", "pct": 7, "cor": "#ec4899" },
+    { "tipo": "Armas de fogo", "pct": 6, "cor": "#f97316" },
+    { "tipo": "Código Nacional de Trânsito", "pct": 5, "cor": "#14b8a6" },
+    { "tipo": "Outros", "pct": 45, "cor": "#94a3b8" }
+  ]
+}

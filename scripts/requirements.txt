@@ -1,0 +1,17 @@
+# ETL — dependências Python para extração de dados do CNJ
+
+# Extração de PDFs
+pdfplumber>=0.11.0
+
+# Manipulação de dados
+pandas>=2.2.0
+
+# HTTP / scraping (Fase 3 — BNMP 3.0)
+requests>=2.31.0
+httpx>=0.27.0
+
+# Automação de browser (fallback se não houver API)
+playwright>=1.44.0
+
+# Validação de schemas
+pydantic>=2.7.0

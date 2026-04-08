@@ -1,0 +1,14 @@
+{
+  "fonte": "CNJ / BNMP 3.0",
+  "ultima_atualizacao": null,
+  "nota": "Dados por UF serão disponibilizados no Sprint 2 após consolidação do BNMP 3.0.",
+  "disponivel": false,
+  "ufs": {
+    "AC": null, "AL": null, "AM": null, "AP": null, "BA": null,
+    "CE": null, "DF": null, "ES": null, "GO": null, "MA": null,
+    "MG": null, "MS": null, "MT": null, "PA": null, "PB": null,
+    "PE": null, "PI": null, "PR": null, "RJ": null, "RN": null,
+    "RO": null, "RR": null, "RS": null, "SC": null, "SE": null,
+    "SP": null, "TO": null
+  }
+}
