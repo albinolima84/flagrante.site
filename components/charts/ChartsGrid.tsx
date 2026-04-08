@@ -44,6 +44,14 @@ const PerfilDemografico = dynamic(
   { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
+const RankingEstados = dynamic(
+  () =>
+    import("./RankingEstados").then((m) => ({
+      default: m.RankingEstados,
+    })),
+  { ssr: false, loading: () => <ChartSkeleton h="h-96" /> }
+);
+
 function ChartSkeleton({ h = "h-72" }: { h?: string }) {
   return (
     <div
@@ -225,6 +233,24 @@ export function ChartsGrid({
           Clique em um estado para filtrar o painel. Cores indicam a taxa de soltura: vermelho = baixa, verde = alta.
         </p>
         <MapaBrasil porUF={porUF} />
+      </SectionCard>
+
+      {/* Ranking de estados */}
+      <SectionCard
+        title="Ranking por estado"
+        fonte={{
+          nome: "CNJ / BNMP 3.0",
+          url: "https://bnmp.cnj.jus.br",
+          cobertura: "Ago/2024–presente",
+        }}
+      >
+        <p className="text-xs text-slate-500">
+          Clique nos cabeçalhos para ordenar. Taxa de soltura: percentual de custodiados que receberam liberdade provisória ou medida cautelar diversa da prisão.
+        </p>
+        <RankingEstados
+          porUF={porUF}
+          taxaNacional={nacional.headlines.taxa_soltura_pct}
+        />
       </SectionCard>
 
       {/* Perfil demográfico */}
