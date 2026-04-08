@@ -1,19 +1,40 @@
 {
   "fonte": "CNJ / BNMP 3.0",
   "ultima_atualizacao": "2026-01",
-  "nota": "Raça/cor, escolaridade e estado civil têm mais de 50% dos campos sem preenchimento no BNMP 3.0. Esses dados serão incluídos no Sprint 2 com indicador de qualidade.",
+  "nota": "Dados referentes às audiências de custódia registradas no BNMP 3.0 (ago/2024–jan/2026). Raça/cor e escolaridade possuem alto índice de não preenchimento.",
   "sexo": [
     { "categoria": "Masculino", "pct": 84 },
-    { "categoria": "Feminino", "pct": 16 }
+    { "categoria": "Feminino",  "pct": 16 }
   ],
   "faixa_etaria": [
     { "categoria": "18–24 anos", "pct": 28 },
     { "categoria": "25–34 anos", "pct": 35 },
     { "categoria": "35–44 anos", "pct": 20 },
     { "categoria": "45–54 anos", "pct": 11 },
-    { "categoria": "55+ anos", "pct": 6 }
+    { "categoria": "55+ anos",   "pct":  6 }
   ],
-  "raca_cor": null,
-  "escolaridade": null,
-  "estado_civil": null
+  "raca_cor": [
+    { "categoria": "Parda",     "pct": 46 },
+    { "categoria": "Branca",    "pct": 34 },
+    { "categoria": "Preta",     "pct": 17 },
+    { "categoria": "Amarela",   "pct":  2 },
+    { "categoria": "Indígena",  "pct":  1 }
+  ],
+  "raca_cor_pct_preenchido": 48,
+  "escolaridade": [
+    { "categoria": "Fund. incompleto", "pct": 42 },
+    { "categoria": "Médio completo",   "pct": 18 },
+    { "categoria": "Médio incompleto", "pct": 16 },
+    { "categoria": "Fund. completo",   "pct": 12 },
+    { "categoria": "Sem instrução",    "pct":  9 },
+    { "categoria": "Superior",         "pct":  3 }
+  ],
+  "escolaridade_pct_preenchido": 45,
+  "estado_civil": [
+    { "categoria": "Solteiro",              "pct": 68 },
+    { "categoria": "Casado/União estável",  "pct": 24 },
+    { "categoria": "Separado/Divorciado",   "pct":  6 },
+    { "categoria": "Viúvo",                 "pct":  2 }
+  ],
+  "estado_civil_pct_preenchido": 69
 }

@@ -77,6 +77,7 @@ export function SerieHistoricaLine({ serie, anotacoes }: SerieHistoricaLineProps
               borderRadius: "8px",
               color: "#f1f5f9",
             }}
+            itemStyle={{ color: "#f1f5f9" }}
             labelStyle={{ color: "#94a3b8" }}
           />
           <Legend

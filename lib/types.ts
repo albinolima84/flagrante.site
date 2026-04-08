@@ -68,8 +68,11 @@ export interface PerfilDemograficoData {
   sexo: CategoriaDemo[];
   faixa_etaria: CategoriaDemo[];
   raca_cor: CategoriaDemo[] | null;
+  raca_cor_pct_preenchido?: number;
   escolaridade: CategoriaDemo[] | null;
+  escolaridade_pct_preenchido?: number;
   estado_civil: CategoriaDemo[] | null;
+  estado_civil_pct_preenchido?: number;
 }
 
 export interface UFData {

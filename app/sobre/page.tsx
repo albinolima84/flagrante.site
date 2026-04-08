@@ -90,10 +90,9 @@ export default function SobrePage() {
       <H3>Raça/cor, escolaridade e estado civil</H3>
       <P>
         Mais de 50% dos registros no BNMP 3.0 não possuem informação de raça,
-        estado civil e escolaridade. Por isso, esses campos{" "}
-        <strong className="text-slate-300">não são exibidos no Sprint 1</strong>
-        . Serão incluídos no Sprint 2 acompanhados de um indicador de qualidade
-        de dados que informa o percentual de preenchimento.
+        estado civil e escolaridade. Esses campos são exibidos no painel
+        acompanhados de um indicador de qualidade que informa o percentual de
+        preenchimento de cada campo.
       </P>
 
       <H3>O que não é possível medir</H3>

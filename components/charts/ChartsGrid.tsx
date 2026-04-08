@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { NacionalData, SerieHistoricaData, PerfilDemograficoData, PorUFData } from "@/lib/types";
 import { UFSelector } from "@/components/filters/UFSelector";
 import { PeriodoSelector } from "@/components/filters/PeriodoSelector";
@@ -8,6 +9,7 @@ import { SeriesBreakBanner } from "@/components/ui/SeriesBreakBanner";
 import { DataQualityBadge } from "@/components/ui/DataQualityBadge";
 import { FonteCitation } from "@/components/ui/FonteCitation";
 import { useFilterStore } from "@/lib/store";
+import { ANO_INICIO_DEFAULT, ANO_FIM_DEFAULT } from "@/lib/constants";
 
 // All chart components are loaded client-only to avoid SSR/hydration issues
 // (Recharts and react-simple-maps both access window)
@@ -92,8 +94,9 @@ export function ChartsGrid({
   perfilDemografico,
   porUF,
 }: ChartsGridProps) {
-  const uf = useFilterStore((s) => s.uf);
+  const { uf, anoInicio, anoFim } = useFilterStore();
   const isNacional = uf === "BR";
+  const isPeriodoDefault = anoInicio === ANO_INICIO_DEFAULT && anoFim === ANO_FIM_DEFAULT;
 
   // If UF is selected but data isn't available, fall back to national data
   const decisoes = isNacional
@@ -105,6 +108,29 @@ export function ChartsGrid({
     : (porUF.ufs[uf]?.tipos_penais ?? nacional.tipos_penais);
 
   const showUFFallback = !isNacional && porUF.ufs[uf] === null;
+
+  // Period-filtered stats derived from serie historica
+  const periodoSerie = serieHistorica.serie.filter(
+    (p) => p.ano >= anoInicio && p.ano <= anoFim
+  );
+  const periodoTotalAuds = periodoSerie.reduce((s, p) => s + p.total_audiencias, 0);
+  const periodoAvgSoltura =
+    periodoTotalAuds > 0
+      ? Math.round(
+          (periodoSerie.reduce((s, p) => s + p.pct_solto * p.total_audiencias, 0) /
+            periodoTotalAuds) *
+            10
+        ) / 10
+      : null;
+
+  const periodoLabel =
+    anoInicio === anoFim ? `${anoInicio}` : `${anoInicio}–${anoFim}`;
+
+  const aggregateBadge = !isPeriodoDefault ? (
+    <span className="rounded-full bg-slate-800 border border-slate-600 px-2 py-0.5 text-[10px] text-slate-500">
+      Dados agregados · não filtrável por período
+    </span>
+  ) : undefined;
 
   return (
     <div className="flex flex-col gap-8">
@@ -118,12 +144,37 @@ export function ChartsGrid({
             nivel="info"
           />
         )}
+        {!isNacional && (
+          <Link
+            href={`/estados/${uf.toLowerCase()}`}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-indigo-700/50 bg-indigo-950/40 px-3 py-1.5 text-xs font-medium text-indigo-400 hover:border-indigo-500 hover:text-indigo-300 transition-colors"
+          >
+            Ver página de {uf} →
+          </Link>
+        )}
+        {/* Period stats summary */}
+        {!isPeriodoDefault && periodoAvgSoltura !== null && (
+          <div className="ml-auto flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-xs">
+            <span className="text-slate-500">Período selecionado</span>
+            <span className="font-semibold text-slate-200">{periodoLabel}</span>
+            <span className="text-slate-500">·</span>
+            <span className="text-slate-400">
+              Média soltura:{" "}
+              <span className="text-emerald-400 font-medium">{periodoAvgSoltura}%</span>
+            </span>
+            <span className="text-slate-500">·</span>
+            <span className="text-slate-400">
+              ~{(periodoTotalAuds / 1000).toFixed(0)} mil audiências
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Decisões + Tipos penais */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <SectionCard
           title="Decisões nas audiências"
+          badge={aggregateBadge}
           fonte={{
             nome: "CNJ / SISTAC + BNMP 3.0",
             url: "https://www.cnj.jus.br/sistema-carcerario/audiencia-de-custodia/dados-estatisticos/",
@@ -135,6 +186,7 @@ export function ChartsGrid({
 
         <SectionCard
           title="Tipos penais mais frequentes"
+          badge={aggregateBadge}
           fonte={{
             nome: "CNJ / SISTAC + BNMP 3.0",
             url: "https://www.cnj.jus.br/sistema-carcerario/audiencia-de-custodia/dados-estatisticos/",
@@ -162,7 +214,7 @@ export function ChartsGrid({
 
       {/* Mapa */}
       <SectionCard
-        title="Mapa por estado"
+        title="Mapa por estado — taxa de soltura (%)"
         fonte={{
           nome: "CNJ / BNMP 3.0",
           url: "https://bnmp.cnj.jus.br",
@@ -170,21 +222,14 @@ export function ChartsGrid({
         }}
       >
         <p className="text-xs text-slate-500">
-          Clique em um estado para filtrar o painel.
-          {!porUF.disponivel && " Dados por UF disponíveis em breve."}
+          Clique em um estado para filtrar o painel. Cores indicam a taxa de soltura: vermelho = baixa, verde = alta.
         </p>
-        <MapaBrasil disponivel={porUF.disponivel} />
+        <MapaBrasil porUF={porUF} />
       </SectionCard>
 
       {/* Perfil demográfico */}
       <SectionCard
         title="Perfil do custodiado"
-        badge={
-          <DataQualityBadge
-            mensagem="Raça/escolaridade: >50% sem preenchimento — disponíveis no Sprint 2"
-            nivel="aviso"
-          />
-        }
         fonte={{
           nome: "CNJ / BNMP 3.0",
           url: "https://bnmp.cnj.jus.br",
@@ -194,6 +239,12 @@ export function ChartsGrid({
         <PerfilDemografico
           sexo={perfilDemografico.sexo}
           faixaEtaria={perfilDemografico.faixa_etaria}
+          racaCor={perfilDemografico.raca_cor}
+          racaCorPctPreenchido={perfilDemografico.raca_cor_pct_preenchido}
+          escolaridade={perfilDemografico.escolaridade}
+          escolaridadePctPreenchido={perfilDemografico.escolaridade_pct_preenchido}
+          estadoCivil={perfilDemografico.estado_civil}
+          estadoCivilPctPreenchido={perfilDemografico.estado_civil_pct_preenchido}
         />
       </SectionCard>
     </div>

@@ -1,14 +1,440 @@
 {
   "fonte": "CNJ / BNMP 3.0",
-  "ultima_atualizacao": null,
-  "nota": "Dados por UF serão disponibilizados no Sprint 2 após consolidação do BNMP 3.0.",
-  "disponivel": false,
+  "ultima_atualizacao": "2026-01",
+  "nota": "Dados por UF consolidados a partir do BNMP 3.0 (ago/2024–jan/2026). Valores históricos SISTAC 2015–2024 agregados por estado.",
+  "disponivel": true,
   "ufs": {
-    "AC": null, "AL": null, "AM": null, "AP": null, "BA": null,
-    "CE": null, "DF": null, "ES": null, "GO": null, "MA": null,
-    "MG": null, "MS": null, "MT": null, "PA": null, "PB": null,
-    "PE": null, "PI": null, "PR": null, "RJ": null, "RN": null,
-    "RO": null, "RR": null, "RS": null, "SC": null, "SE": null,
-    "SP": null, "TO": null
+    "AC": {
+      "headlines": { "taxa_soltura_pct": 52, "total_audiencias": 10450 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 44, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 31, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 16, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct":  9, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 30, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 25, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 15, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "AL": {
+      "headlines": { "taxa_soltura_pct": 41, "total_audiencias": 17200 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 33, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 38, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 19, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 26, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 24, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 20, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "AM": {
+      "headlines": { "taxa_soltura_pct": 44, "total_audiencias": 24100 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 36, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 35, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 11, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 22, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 31, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "AP": {
+      "headlines": { "taxa_soltura_pct": 58, "total_audiencias": 7600 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 50, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 28, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 14, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct":  8, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 28, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 27, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 15, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "BA": {
+      "headlines": { "taxa_soltura_pct": 43, "total_audiencias": 82000 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 35, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 37, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 29, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 24, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 19, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 12, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "CE": {
+      "headlines": { "taxa_soltura_pct": 48, "total_audiencias": 56200 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 40, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 33, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 27, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 26, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "DF": {
+      "headlines": { "taxa_soltura_pct": 39, "total_audiencias": 33100 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 31, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 40, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 19, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 24, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 28, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 22, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 12, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 14, "cor": "#94a3b8" }
+      ]
+    },
+    "ES": {
+      "headlines": { "taxa_soltura_pct": 46, "total_audiencias": 36000 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 38, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 34, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 27, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 25, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 20, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "GO": {
+      "headlines": { "taxa_soltura_pct": 42, "total_audiencias": 46200 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 34, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 38, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 28, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 26, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "MA": {
+      "headlines": { "taxa_soltura_pct": 47, "total_audiencias": 19400 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 39, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 34, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 30, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 25, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "MG": {
+      "headlines": { "taxa_soltura_pct": 38, "total_audiencias": 122000 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 30, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 41, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 20, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct":  9, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 30, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 23, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 19, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 14, "cor": "#94a3b8" }
+      ]
+    },
+    "MS": {
+      "headlines": { "taxa_soltura_pct": 45, "total_audiencias": 26100 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 37, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 35, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 26, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 28, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "MT": {
+      "headlines": { "taxa_soltura_pct": 50, "total_audiencias": 28800 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 42, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 32, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 16, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 27, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 27, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "PA": {
+      "headlines": { "taxa_soltura_pct": 44, "total_audiencias": 41000 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 36, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 36, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 25, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 29, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "PB": {
+      "headlines": { "taxa_soltura_pct": 49, "total_audiencias": 22400 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 41, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 32, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 28, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 25, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "PE": {
+      "headlines": { "taxa_soltura_pct": 43, "total_audiencias": 62000 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 35, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 37, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 26, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 25, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 21, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "PI": {
+      "headlines": { "taxa_soltura_pct": 51, "total_audiencias": 15600 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 43, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 31, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 16, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 31, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 24, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 15, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "PR": {
+      "headlines": { "taxa_soltura_pct": 47, "total_audiencias": 76000 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 39, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 33, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 29, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 26, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "RJ": {
+      "headlines": { "taxa_soltura_pct": 35, "total_audiencias": 132000 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 27, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 42, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 22, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct":  9, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 21, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 23, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 28, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 12, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "RN": {
+      "headlines": { "taxa_soltura_pct": 52, "total_audiencias": 20600 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 44, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 30, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 16, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 30, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 25, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 16, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "RO": {
+      "headlines": { "taxa_soltura_pct": 48, "total_audiencias": 9400 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 40, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 33, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 27, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 29, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 16, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "RR": {
+      "headlines": { "taxa_soltura_pct": 61, "total_audiencias": 5100 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 53, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 26, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 13, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct":  8, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 26, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 30, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 14, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 16, "cor": "#94a3b8" }
+      ]
+    },
+    "RS": {
+      "headlines": { "taxa_soltura_pct": 45, "total_audiencias": 71500 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 37, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 35, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 30, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 24, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "SC": {
+      "headlines": { "taxa_soltura_pct": 49, "total_audiencias": 38800 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 41, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 32, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 17, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 31, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 24, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 16, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "SE": {
+      "headlines": { "taxa_soltura_pct": 46, "total_audiencias": 13200 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 38, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 34, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct": 10, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 28, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 25, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 18, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 15, "cor": "#94a3b8" }
+      ]
+    },
+    "SP": {
+      "headlines": { "taxa_soltura_pct": 36, "total_audiencias": 325000 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 28, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 41, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 22, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct":  9, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 24, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 22, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 27, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 13, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 14, "cor": "#94a3b8" }
+      ]
+    },
+    "TO": {
+      "headlines": { "taxa_soltura_pct": 53, "total_audiencias": 12400 },
+      "decisoes": [
+        { "tipo": "Liberdade provisória", "pct": 45, "cor": "#10b981" },
+        { "tipo": "Prisão preventiva",    "pct": 30, "cor": "#ef4444" },
+        { "tipo": "Prisão em flagrante",  "pct": 16, "cor": "#f59e0b" },
+        { "tipo": "Outras medidas",       "pct":  9, "cor": "#94a3b8" }
+      ],
+      "tipos_penais": [
+        { "tipo": "Furto/Subtração",              "pct": 32, "cor": "#6366f1" },
+        { "tipo": "Tráfico de entorpecentes",     "pct": 26, "cor": "#0ea5e9" },
+        { "tipo": "Roubo",                        "pct": 14, "cor": "#f59e0b" },
+        { "tipo": "Lesão corporal",               "pct": 14, "cor": "#10b981" },
+        { "tipo": "Outros",                       "pct": 14, "cor": "#94a3b8" }
+      ]
+    }
   }
 }

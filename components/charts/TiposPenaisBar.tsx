@@ -50,6 +50,8 @@ export function TiposPenaisBar({ dados }: TiposPenaisBarProps) {
               borderRadius: "8px",
               color: "#f1f5f9",
             }}
+            itemStyle={{ color: "#f1f5f9" }}
+            labelStyle={{ color: "#94a3b8" }}
           />
           <Bar dataKey="pct" radius={[0, 4, 4, 0]}>
             {sorted.map((entry, index) => (
