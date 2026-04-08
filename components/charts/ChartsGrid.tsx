@@ -2,6 +2,8 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { Suspense } from "react";
+import { FilterURLSync } from "@/components/filters/FilterURLSync";
 import { NacionalData, SerieHistoricaData, PerfilDemograficoData, PorUFData } from "@/lib/types";
 import { UFSelector } from "@/components/filters/UFSelector";
 import { PeriodoSelector } from "@/components/filters/PeriodoSelector";
@@ -142,6 +144,10 @@ export function ChartsGrid({
 
   return (
     <div className="flex flex-col gap-8">
+      <Suspense>
+        <FilterURLSync />
+      </Suspense>
+
       {/* Filtros globais */}
       <div className="flex flex-wrap items-center gap-4 rounded-xl border border-slate-700 bg-slate-900 p-4">
         <UFSelector />

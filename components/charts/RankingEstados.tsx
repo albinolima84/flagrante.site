@@ -8,6 +8,7 @@ import { UF_LIST } from "@/lib/constants";
 type SortKey = "taxa_soltura_pct" | "total_audiencias" | "diff";
 type SortDir = "asc" | "desc";
 
+
 function choroColor(pct: number): string {
   if (pct < 35) return "#dc2626";
   if (pct < 42) return "#f97316";
@@ -24,6 +25,7 @@ interface RankingEstadosProps {
 export function RankingEstados({ porUF, taxaNacional }: RankingEstadosProps) {
   const [sortKey, setSortKey] = useState<SortKey>("taxa_soltura_pct");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [busca, setBusca] = useState("");
 
   function handleSort(key: SortKey) {
     if (sortKey === key) {
@@ -34,7 +36,14 @@ export function RankingEstados({ porUF, taxaNacional }: RankingEstadosProps) {
     }
   }
 
+  const termo = busca.trim().toLowerCase();
+
   const rows = UF_LIST.filter((u) => u.sigla !== "BR")
+    .filter((u) =>
+      !termo ||
+      u.sigla.toLowerCase().includes(termo) ||
+      u.nome.toLowerCase().includes(termo)
+    )
     .map((u) => {
       const data = porUF.ufs[u.sigla];
       const taxa = data?.headlines?.taxa_soltura_pct ?? null;
@@ -74,6 +83,21 @@ export function RankingEstados({ porUF, taxaNacional }: RankingEstadosProps) {
   }
 
   return (
+    <div className="flex flex-col gap-3">
+    <div className="flex items-center gap-2">
+      <input
+        type="search"
+        placeholder="Buscar estado…"
+        value={busca}
+        onChange={(e) => setBusca(e.target.value)}
+        className="w-48 rounded-lg border border-slate-600 bg-slate-800 px-3 py-1.5 text-sm text-slate-200 placeholder-slate-500 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+      />
+      {termo && (
+        <span className="text-xs text-slate-500">
+          {rows.length} estado{rows.length !== 1 ? "s" : ""} encontrado{rows.length !== 1 ? "s" : ""}
+        </span>
+      )}
+    </div>
     <div className="overflow-x-auto rounded-lg border border-slate-700">
       <table className="w-full text-sm">
         <thead className="bg-slate-800/60 border-b border-slate-700">
@@ -205,6 +229,7 @@ export function RankingEstados({ porUF, taxaNacional }: RankingEstadosProps) {
           })}
         </tbody>
       </table>
+    </div>
     </div>
   );
 }
